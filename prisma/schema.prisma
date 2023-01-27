@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model albums {
+  id     Int     @id
+  name   String  @db.VarChar(200)
+  artist String  @db.VarChar(100)
+  rating Decimal @db.Decimal
+  critic String?
+}
