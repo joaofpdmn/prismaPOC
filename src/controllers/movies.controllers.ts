@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { deleteMovie, getManyMovies, getManyMoviesByRating, insertMovie, updateMovie } from "../repositories/movies.repositories";
+import { deleteMovie, getManyMovies, getManyMoviesByRating, insertMovie, updateMovie } from "../repositories/movies.repositories.js";
 
 async function getAllMovies(req: Request, res: Response) {
     const result = await getManyMovies();

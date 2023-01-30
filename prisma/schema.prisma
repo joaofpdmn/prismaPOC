@@ -8,22 +8,27 @@ datasource db {
 }
 
 model albums {
-  id     Int     @id @default(autoincrement())
-  name   String  @db.VarChar(200)
-  artist String  @db.VarChar(100)
-  rating Decimal @db.Decimal
-  critic String?
-}
-
-model artist {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(200)
+  id                                           Int              @id @default(autoincrement())
+  name                                         String           @db.VarChar(200)
+  artist                                       String           @db.VarChar(100)
+  rating                                       Decimal          @db.Decimal
+  critic                                       String?
+  moviesandmusic_moviesandmusic_albumsToalbums moviesandmusic[] @relation("moviesandmusic_albumsToalbums")
 }
 
 model movies {
-  id     Int     @id @default(autoincrement())
-  name   String  @db.VarChar(200)
-  artist String  @db.VarChar(100)
-  rating Decimal @db.Decimal
-  critic String?
+  id             Int              @id @default(autoincrement())
+  name           String           @db.VarChar(200)
+  artist         String           @db.VarChar(100)
+  rating         Decimal          @db.Decimal
+  critic         String?
+  moviesandmusic moviesandmusic[]
+}
+
+model moviesandmusic {
+  id                                   Int    @id @default(autoincrement())
+  moviesid                             Int
+  albums                               Int
+  albums_moviesandmusic_albumsToalbums albums @relation("moviesandmusic_albumsToalbums", fields: [albums], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  movies                               movies @relation(fields: [moviesid], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }

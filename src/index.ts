@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { albumsRouter } from './routers/albums.routers.js';
 import { moviesRouter } from './routers/movies.routers.js';
+import { moviesAndMusicRouter } from './routers/moviesandmusics.routers.js';
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ app.get('/health', (req, res) => {
 
 app.use(albumsRouter);
 app.use(moviesRouter);
+app.use(moviesAndMusicRouter);
 
 app.listen(process.env.PORT, () => {
     console.log("Ouvindo em porta 4000");

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteUniqueMovie, getAllMovies, getAllMoviesByRating, insertUniqueMovie, updateUniqueMovie } from "../controllers/movies.controllers";
+import { deleteUniqueMovie, getAllMovies, getAllMoviesByRating, insertUniqueMovie, updateUniqueMovie } from "../controllers/movies.controllers.js";
 
 const moviesRouter = Router();
 
@@ -10,4 +10,4 @@ moviesRouter.post('/updatemovie', updateUniqueMovie);
 moviesRouter.delete('/movies', deleteUniqueMovie);
 
 
-export {  moviesRouter };
+export { moviesRouter };
