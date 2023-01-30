@@ -1,8 +1,13 @@
 import { Router } from "express";
-import { getAllAlbums } from "../controllers/albums.controller.js";
+import { deleteUniqueAlbum, getAllAlbums, getAllAlbumsByRating, insertUniqueAlbum, updateUniqueAlbum } from "../controllers/albums.controller.js";
 
 const albumsRouter = Router();
 
 albumsRouter.get('/albums', getAllAlbums);
+albumsRouter.get('/albumsbyrating', getAllAlbumsByRating);
+albumsRouter.post('/albums', insertUniqueAlbum);
+albumsRouter.post('/update', updateUniqueAlbum);
+albumsRouter.delete('/albums', deleteUniqueAlbum);
+
 
 export { albumsRouter };

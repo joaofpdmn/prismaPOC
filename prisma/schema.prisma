@@ -8,7 +8,20 @@ datasource db {
 }
 
 model albums {
-  id     Int     @id
+  id     Int     @id @default(autoincrement())
+  name   String  @db.VarChar(200)
+  artist String  @db.VarChar(100)
+  rating Decimal @db.Decimal
+  critic String?
+}
+
+model artist {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(200)
+}
+
+model movies {
+  id     Int     @id @default(autoincrement())
   name   String  @db.VarChar(200)
   artist String  @db.VarChar(100)
   rating Decimal @db.Decimal
