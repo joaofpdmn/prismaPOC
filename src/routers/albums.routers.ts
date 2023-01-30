@@ -6,7 +6,7 @@ const albumsRouter = Router();
 albumsRouter.get('/albums', getAllAlbums);
 albumsRouter.get('/albumsbyrating', getAllAlbumsByRating);
 albumsRouter.post('/albums', insertUniqueAlbum);
-albumsRouter.post('/update', updateUniqueAlbum);
+albumsRouter.post('/updatealbum', updateUniqueAlbum);
 albumsRouter.delete('/albums', deleteUniqueAlbum);
 
 
