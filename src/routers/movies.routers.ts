@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { deleteUniqueMovie, getAllMovies, getAllMoviesByRating, insertUniqueMovie, updateUniqueMovie } from "../controllers/movies.controllers";
 
-const albumsRouter = Router();
+const moviesRouter = Router();
 
-albumsRouter.get('/movies', getAllMovies);
-albumsRouter.get('/moviesbyrating', getAllMoviesByRating);
-albumsRouter.post('/movies', insertUniqueMovie);
-albumsRouter.post('/updatemovie', updateUniqueMovie);
-albumsRouter.delete('/movies', deleteUniqueMovie);
+moviesRouter.get('/movies', getAllMovies);
+moviesRouter.get('/moviesbyrating', getAllMoviesByRating);
+moviesRouter.post('/movies', insertUniqueMovie);
+moviesRouter.post('/updatemovie', updateUniqueMovie);
+moviesRouter.delete('/movies', deleteUniqueMovie);
 
 
-export { albumsRouter };
+export {  moviesRouter };
